@@ -17,7 +17,7 @@ module Jekyll
     end
 
     attr_accessor :site
-    attr_accessor :data, :content, :output, :ext
+    attr_accessor :data, :content, :output, :ext, :name
     attr_accessor :date, :slug, :published, :tags, :categories
 
     # Initialize this Post instance.
