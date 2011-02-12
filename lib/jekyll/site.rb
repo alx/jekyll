@@ -109,7 +109,7 @@ module Jekyll
     #
     # Returns nothing
     def read_posts(dir)
-      base = File.join(self.source, dir, '_posts')
+      base = File.join(self.source, dir, '_fromages')
       return unless File.exists?(base)
       entries = Dir.chdir(base) { filter_entries(Dir['**/*']) }
 
@@ -126,7 +126,7 @@ module Jekyll
         end
       end
 
-      self.posts.sort!
+      #self.posts.sort!
 
       # limit the posts if :limit_posts option is set
       self.posts = self.posts[-limit_posts, limit_posts] if limit_posts
