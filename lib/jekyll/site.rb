@@ -250,7 +250,7 @@ module Jekyll
     def site_payload
       {"site" => self.config.merge({
           "time"       => self.time,
-          "posts"      => self.posts.sort { |a,b| b <=> a },
+          "posts"      => self.posts,
           "pages"      => self.pages,
           "html_pages" => self.pages.reject { |page| !page.html? },
           "categories" => post_attr_hash('categories'),
