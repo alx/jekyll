@@ -165,9 +165,6 @@ module Jekyll
 
       # files to be written
       files = []
-      self.posts.each do |post|
-        files << post.destination(self.dest)
-      end
       self.pages.each do |page|
         files << page.destination(self.dest)
       end
