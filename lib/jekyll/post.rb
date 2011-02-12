@@ -8,14 +8,12 @@ module Jekyll
       attr_accessor :lsi
     end
 
-    MATCHER = /^(.+\/)*(\d+-\d+-\d+)-(.*)(\.[^.]+)$/
-
     # Post name validator. Post filenames must be like:
     #   2008-11-05-my-awesome-post.textile
     #
     # Returns <Bool>
     def self.valid?(name)
-      name =~ MATCHER
+      return true
     end
 
     attr_accessor :site
@@ -31,7 +29,7 @@ module Jekyll
     # Returns <Post>
     def initialize(site, source, dir, name)
       @site = site
-      @base = File.join(source, dir, '_posts')
+      @base = File.join(source, dir, 'fromages')
       @name = name
 
       self.categories = dir.split('/').reject { |x| x.empty? }
@@ -74,10 +72,6 @@ module Jekyll
     #
     # Returns nothing
     def process(name)
-      m, cats, date, slug, ext = *name.match(MATCHER)
-      self.date = Time.parse(date)
-      self.slug = slug
-      self.ext = ext
     end
 
     # The generated directory into which the post will be placed
