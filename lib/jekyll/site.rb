@@ -184,9 +184,6 @@ module Jekyll
     #
     # Returns nothing
     def write
-      self.posts.each do |post|
-        post.write(self.dest)
-      end
       self.pages.each do |page|
         page.write(self.dest)
       end
